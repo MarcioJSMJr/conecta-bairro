@@ -32,10 +32,6 @@ if (!defined('SITE_NAME')) {
     define('SITE_NAME', 'Conecta-Bairro');
 }
 
-// Define uma constante de segurança para a criptografia de senhas
-define('PASSWORD_PEPPER', 'a8b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6');
-
-
 // --- 2. CORE: CARREGAMENTO DE CLASSES E ENGINE ---
 
 // Carrega arquivos essenciais da pasta /src
@@ -47,6 +43,10 @@ require_once ADMIN_ROOT . '/src/helpers/utils.php';
 
 // Carrega o arquivo de configuração do banco de dados (que está na raiz do projeto)
 $app_config = parse_ini_file(PROJECT_ROOT . '/app.ini.php', true);
+
+// Define uma constante de segurança para a criptografia de senhas
+define('PASSWORD_PEPPER', 'a8b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6');
+
 $db = require_once ADMIN_ROOT . '/src/model/db.php';
 
 // Carrega todos os Models
@@ -63,7 +63,7 @@ require_once ADMIN_ROOT . '/src/controller/donation_controller.php';
 require_once ADMIN_ROOT . '/src/controller/donation_category_controller.php';
 require_once ADMIN_ROOT . '/src/controller/admin_activity_log_controller.php';
 require_once ADMIN_ROOT . '/src/controller/collection_point_controller.php';
-require_once ADMIN_ROOT . '/src/controller/site_user_controller.php'; 
+require_once ADMIN_ROOT . '/src/controller/site_user_controller.php';
 
 
 // --- 3. SESSÃO: INICIALIZAÇÃO ---
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Processa ações para DOAÇÕES
     if ($resource === 'donations') {
         if ($action_type === 'create') {
-            $donation_controller->create();
+            $donation_controller->create_from_site();
         } elseif ($action_type === 'edit') {
             $id = $_POST['donation_id'] ?? null;
             if ($id) $donation_controller->modify($id);
