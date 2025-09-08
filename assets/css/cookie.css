@@ -1,0 +1,61 @@
+/* ======================= ESTILOS DO BANNER DE COOKIES ======================= */
+
+.cookie-consent-banner {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222; 
+    color: #fff; 
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2); 
+    z-index: 1000; 
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(0%);
+}
+
+.cookie-consent-banner.hidden {
+    transform: translateY(100%);
+    display: none;
+}
+
+.cookie-consent-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    gap: 15px; 
+}
+
+.cookie-consent-text {
+    margin: 0;
+    flex: 1; 
+    min-width: 300px;
+}
+
+.cookie-consent-link {
+    color: #4da6ff; 
+    text-decoration: underline;
+}
+
+.cookie-consent-link:hover {
+    color: #80bfff;
+}
+
+.cookie-consent-button {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.cookie-consent-button:hover {
+    background-color: #45a049; 
+}

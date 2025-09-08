@@ -1,0 +1,140 @@
+/* --- Cabeçalho e Breadcrumb (Padrão) --- */
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    margin-top: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header .page-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.page-header .page-subtitle {
+    font-size: 1.2rem;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-item a {
+    color: var(--white-color) !important;
+    opacity: 0.9;
+}
+
+.breadcrumb-item a:hover {
+    opacity: 1;
+}
+
+.breadcrumb-item.active {
+    color: var(--white-color) !important;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--white-color);
+    opacity: 0.7;
+}
+
+/* --- Estilo das Abas de Navegação --- */
+.nav-tabs {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--dark-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Estilo dos Cards de Pontos de Coleta --- */
+.coleta-card-page {
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-speed) ease;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.coleta-card-page:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    border-left-color: var(--primary-color);
+}
+
+.coleta-card-page .icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-right: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.coleta-card-page:hover .icon {
+    color: var(--primary-color);
+}
+
+.coleta-card-page .info {
+    flex-grow: 1;
+}
+
+.coleta-card-page .info .title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.coleta-card-page .info .address {
+    margin: 0.2rem 0 0.8rem 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.coleta-card-page .info .materials span {
+    display: inline-block;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}

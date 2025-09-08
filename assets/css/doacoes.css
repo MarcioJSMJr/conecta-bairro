@@ -1,0 +1,127 @@
+/* --- Cabeçalho da Página --- */
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    margin-top: 70px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/images/hero-background.png');
+}
+
+.page-header .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header .page-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.page-header .page-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-item {
+    padding: 0 0.3rem;
+}
+
+.breadcrumb-item a {
+    color: var(--white-color) !important;
+    opacity: 0.9;
+    position: relative;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    transition: all var(--transition-speed) ease;
+}
+
+.breadcrumb-item a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumb-item a::after {
+    display: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--white-color) !important;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--white-color);
+    opacity: 0.7;
+    padding-right: 0.3rem;
+}
+
+/* --- Barra de Filtro Compacta --- */
+.filter-bar {
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-speed) ease;
+    padding: 0.5rem; 
+}
+
+.filter-bar:focus-within {
+    border-color: rgba(40, 167, 69, 0.4);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.1);
+}
+
+.filter-bar .form-control-sm,
+.filter-bar .form-select-sm {
+    font-size: 0.9rem;
+}
+
+.filter-bar .form-control,
+.filter-bar .form-select {
+    border: none; 
+    background-color: var(--white-color); 
+    border-radius: 6px; 
+}
+
+.filter-bar .form-control:focus,
+.filter-bar .form-select:focus {
+    box-shadow: none;
+}
+
+/* --- Paginação --- */
+.pagination .page-item .page-link {
+    color: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: var(--light-color);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-gradient);
+    border-color: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow);
+}

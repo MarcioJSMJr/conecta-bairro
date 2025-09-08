@@ -1,0 +1,204 @@
+/* --- Cabeçalho e Breadcrumb (Padrão) --- */
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    margin-top: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    color: var(--white-color);
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-item a {
+    color: var(--white-color) !important;
+    opacity: 0.9;
+}
+
+.breadcrumb-item a:hover {
+    opacity: 1;
+}
+
+.breadcrumb-item.active {
+    color: var(--white-color) !important;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--white-color);
+    opacity: 0.7;
+}
+
+/* --- Seção de Detalhes do Item --- */
+.item-detalhe-section {
+    background-color: var(--white-color);
+}
+
+/* --- Galeria de Imagens --- */
+.gallery-wrapper .main-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.gallery-wrapper .main-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-thumbnails .thumb {
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    opacity: 0.7;
+}
+
+.gallery-thumbnails .thumb:hover {
+    border-color: var(--primary-color);
+    opacity: 1;
+}
+
+.gallery-thumbnails .thumb.active {
+    border-color: var(--primary-color);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.gallery-thumbnails .thumb img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* --- Conteúdo do Item --- */
+.item-content-wrapper .post-category {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.item-content-wrapper .item-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.item-lead-box {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.item-lead-box .lead {
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* --- Caixa de Contato Revelada --- */
+.contact-info-box {
+    background-color: #e9f6ec;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.contact-info-box h4 {
+    color: var(--primary-darker);
+    font-weight: 600;
+}
+
+.contact-info-box ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.contact-info-box ul li i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Ficha de Detalhes --- */
+.detalhes-container .detalhes-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.detalhe-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    padding: 0.8rem;
+    border-radius: 6px;
+}
+
+.detalhe-item .icon-check {
+    color: var(--primary-color);
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.detalhe-item p {
+    margin: 0;
+    font-size: 0.9rem;
+}

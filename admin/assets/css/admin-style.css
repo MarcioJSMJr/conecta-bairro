@@ -1,0 +1,523 @@
+/* ===================================================================
+   ARQUIVO DE ESTILO PRINCIPAL - PAINEL ADMIN CONECTA-BAIRRO
+   =================================================================== */
+
+/* --- 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+:root {
+    --primary-color: #28a745;
+    --primary-darker: #218838;
+    --secondary-color: #0d6efd;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --sidebar-bg: #2a3042;
+    --body-bg: #f4f7f6;
+    --white-color: #FFFFFF;
+    --dark-color: #343a40;
+    --text-light: #6c757d;
+    --border-color: #dee2e6;
+    --sidebar-width: 260px;
+}
+
+html,
+body {
+    background-color: var(--body-bg);
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- 2. ESTRUTURA PRINCIPAL DO LAYOUT --- */
+#wrapper {
+    display: flex;
+}
+
+.sidebar-wrapper {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    color: var(--white-color);
+    transition: margin-left 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+/* Estado recolhido do sidebar */
+#wrapper.sidebar-toggled .sidebar-wrapper {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+#wrapper.sidebar-toggled .main-content-wrapper {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+/* --- 3. SIDEBAR (MENU LATERAL) --- */
+.sidebar-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-brand .logo {
+    max-height: 50px;
+    margin-right: 0.8rem;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 0.85rem 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.sidebar-link i {
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-item.active>.sidebar-link,
+.sidebar-link:hover {
+    color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-item.active>.sidebar-link {
+    background-color: var(--primary-color);
+}
+
+.sidebar-wrapper hr {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1rem;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-close-btn {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.sidebar-close-btn:hover {
+    color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- 4. HEADER (BARRA SUPERIOR) --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+/* --- 5. COMPONENTES GERAIS DO PAINEL --- */
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card-v2 {
+    border: none;
+}
+
+.stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card-v2:hover .stat-icon {
+    transform: scale(1.1) rotate(-8deg);
+}
+
+.stat-icon.icon-primary {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--primary-color);
+}
+
+.stat-icon.icon-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: var(--success-color);
+}
+
+.stat-icon.icon-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger-color);
+}
+
+.stat-icon.icon-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: var(--warning-color);
+}
+
+.stat-icon.icon-info {
+    background-color: rgba(13, 202, 240, 0.1);
+    color: var(--info-color);
+}
+
+
+.badge.bg-success-soft {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: var(--success-color);
+}
+
+.badge.bg-danger-soft {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger-color);
+}
+
+.badge.bg-info-soft {
+    background-color: rgba(13, 202, 240, 0.1);
+    color: var(--info-color);
+}
+
+.badge.bg-secondary-soft {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.activity-feed .list-group-item {
+    padding: 1rem 1.25rem;
+    border-color: #f1f1f1 !important;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.activity-feed .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.stat-icon.icon-primary-soft {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+.stat-icon.icon-success-soft {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: var(--success-color);
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+/* Tabelas */
+.table {
+    border-color: var(--border-color);
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fbfbfb;
+}
+
+.table .badge {
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+}
+
+/* Modais */
+.modal-content {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.modal-header {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-footer {
+    border-top: 1px solid #f0f0f0;
+}
+
+/* --- ESTILOS PARA A LISTA DE DOAÇÕES (ADMIN) --- */
+.donation-card-compact .item-image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.donation-card-compact .item-info h5 {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+.donation-card-compact .item-info small {
+    font-size: 0.85rem;
+}
+
+.donation-card-compact .item-status .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.btn-icon-only {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50% !important;
+}
+
+@media (max-width: 767.98px) {
+    .donation-card-compact .card-body {
+        align-items: flex-start !important;
+        position: relative;
+    }
+
+    /* 1. Imagem com tamanho fixo à esquerda */
+    .donation-card-compact .item-image {
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+        margin-right: 1rem;
+    }
+
+    .donation-card-compact .item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 2. Agrupa o conteúdo de texto */
+    .donation-card-compact .item-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 2rem;
+    }
+
+    /* 3. Ajusta fontes e espaçamentos */
+    .donation-card-compact .item-info h5 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    .donation-card-compact .item-info small {
+        font-size: 0.8rem;
+    }
+
+    .donation-card-compact .item-status {
+        margin-top: 0.5rem;
+    }
+
+    /* 4. Posiciona o botão no canto direito */
+    .donation-card-compact .dropdown {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+/* --- ESTILOS PARA OS CARDS DE CATEGORIA (ADMIN) --- */
+.category-admin-card {
+    transition: all var(--transition-speed) ease;
+}
+
+.category-admin-card .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.category-admin-card:hover .icon-wrapper {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.category-admin-card .card-title {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+.category-admin-card .dropdown {
+  position: static !important;
+}
+
+/* --- 7. COMPONENTES MELHORADOS (BUSCA E PAGINAÇÃO) --- */
+
+/* --- Barra de Busca --- */
+.search-bar-card {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.search-form {
+    background-color: var(--white-color);
+    border-radius: 50px;
+    padding: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
+}
+
+.search-form:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.1);
+}
+
+.search-form .form-control {
+    border: none;
+    background-color: transparent;
+    padding-left: 1rem;
+}
+
+.search-form .form-control:focus {
+    box-shadow: none;
+}
+
+/* --- Paginação --- */
+.pagination {
+    gap: 0.5rem;
+}
+
+.pagination .page-link {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    width: auto;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: all var(--transition-speed) ease;
+    padding: 0 0.8rem;
+}
+
+.pagination .page-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--hover-shadow);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-color);
+    border-color: transparent;
+    color: var(--white-color);
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-2px);
+}
+
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+    padding: 0 1rem;
+}
+
+.pagination .page-item:first-child .page-link i {
+    margin-right: 0.5rem;
+}
+
+.pagination .page-item:last-child .page-link i {
+    margin-left: 0.5rem;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    box-shadow: none;
+    border-color: var(--border-color);
+}
+
+/* --- ESTILOS PARA OS CARDS DE USUÁRIO (ADMIN) --- */
+.user-admin-card .user-avatar {
+    font-size: 3rem;
+    color: var(--text-light);
+}
+
+.user-admin-card .card-title {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+.user-admin-card .badge {
+    font-weight: 500;
+}
+
+/* --- 6. LAYOUT RESPONSIVO --- */
+@media (max-width: 991.98px) {
+    .sidebar-wrapper {
+        margin-left: calc(-1 * var(--sidebar-width));
+    }
+
+    #wrapper.sidebar-toggled .sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    .main-content-wrapper {
+        width: 100%;
+        margin-left: 0;
+    }
+}

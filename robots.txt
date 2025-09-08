@@ -1,0 +1,11 @@
+User-agent: *
+
+# Permite o acesso a todo o site.
+Allow: /
+
+# Desabilita o acesso a pastas de sistema que não precisam ser indexadas.
+Disallow: /includes/
+Disallow: /assets/
+
+# Informa aos robôs onde encontrar o mapa do seu site.
+Sitemap: https://www.seusite.com.br/sitemap.xml

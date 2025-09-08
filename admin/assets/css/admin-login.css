@@ -1,0 +1,87 @@
+/* --- ESTILO GERAL DO CORPO DA PÁGINA --- */
+.login-wrapper {
+    min-height: 100vh;
+    background-color: #e9ecef;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 1rem;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+}
+
+.logo-wrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-wrapper img {
+    max-height: 60px;
+    width: auto;
+}
+
+.login-card h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.login-card .text-muted {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group-icon {
+    position: relative;
+}
+
+.form-group-icon .form-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    pointer-events: none;
+}
+
+.form-group-icon .form-control {
+    padding-left: 2.8rem;
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.15);
+}
+
+.btn-submit {
+    background: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    padding: 0.8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}

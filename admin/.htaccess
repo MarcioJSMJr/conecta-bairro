@@ -1,0 +1,12 @@
+# Ativa o motor de reescrita
+RewriteEngine On
+
+# Define o caminho base para a pasta /admin
+# RewriteBase /site/conectabairro/admin/
+
+# Condições: Não aplica a regra se o que foi pedido já é um arquivo ou pasta
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Regra: Envia a URL para o index.php DENTRO DA PASTA ADMIN
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

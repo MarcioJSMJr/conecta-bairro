@@ -1,0 +1,31 @@
+RewriteEngine On
+
+#RewriteBase /site/sigma/
+
+RewriteRule ^admin/ - [L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+
+# --- DIRETIVAS DE SEGURANÇA ---
+Options -Indexes
+<Files ~ "\.(htaccess|htpasswd|ini|php|log)$">
+    Require all denied
+</Files>
+# -- EXCEÇÕES DE SEGURANÇA --
+<Files "index.php">
+    Require all granted
+</Files>
+<Files "sitemap.php">
+    Require all granted
+</Files>
+<Files "logout.php">
+    Require all granted
+</Files>
+
+
+# --- REGRA GERAL (DEVE SER A ÚLTIMA REGRA DE REESCRITA) ---
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
