@@ -1,33 +1,52 @@
-/* --- Breadcrumb --- */
+/* --- Cabeçalho e Breadcrumb (Padrão) --- */
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header .page-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.page-header .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--white-color) !important;
+}
+
 .breadcrumb {
     display: inline-flex;
     align-items: center;
     background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.breadcrumb-item {
-    padding: 0 0.3rem;
 }
 
 .breadcrumb-item a {
     color: var(--white-color) !important;
     opacity: 0.9;
-    position: relative;
-    padding: 0.3rem 0.8rem;
-    border-radius: 30px;
-    transition: all var(--transition-speed) ease;
 }
 
 .breadcrumb-item a:hover {
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.breadcrumb-item a::after {
-    display: none;
 }
 
 .breadcrumb-item.active {
@@ -39,62 +58,6 @@
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--white-color);
     opacity: 0.7;
-    padding-right: 0.3rem;
-}
-
-/* --- Page Header (Cabeçalho da Página) --- */
-.page-header {
-    padding: 12rem 0 6rem; 
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    color: var(--white-color);
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-}
-
-.page-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--white-color);
-}
-
-/* CORREÇÃO DO BREADCRUMB */
-.page-header .breadcrumb {
-    background-color: var(--primary-color);
-    display: inline-flex;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-}
-
-.page-header .breadcrumb-item a {
-    color: var(--white-color);
-    opacity: 0.9;
-    text-decoration: none;
-}
-
-.page-header .breadcrumb-item a:hover {
-    opacity: 1;
-}
-
-.page-header .breadcrumb-item.active {
-    color: var(--white-color);
-    font-weight: 500;
-}
-
-.page-header .breadcrumb-item+.breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.7);
 }
 
 /* --- Seção de Introdução --- */

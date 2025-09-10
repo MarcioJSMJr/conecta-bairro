@@ -1,13 +1,12 @@
 <section class="page-header" style="background-image: url('<?php echo BASE_URL; ?>assets/images/hero-background.png');">
+    <div class="hero-overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 data-aos="fade-up">Sobre o Projeto</h1>
-                 <p class="page-header-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Tem alguma dúvida, sugestão ou quer ser um parceiro do projeto? Entre em contato!
-                </p>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <h1 class="page-title display-4 text-white">Sobre o Projeto</h1>
+                <p class="page-subtitle lead text-white-50 mb-4"> Tem alguma dúvida, sugestão ou quer ser um parceiro do projeto? <br> Entre em contato!</p>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo BASE_URL; ?>">Início</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Sobre Nós</li>
                     </ol>

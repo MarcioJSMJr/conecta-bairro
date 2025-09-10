@@ -2,7 +2,6 @@
 require_once __DIR__ . '/model.php';
 require_once __DIR__ . '/exceptions.php';
 
-// Classe que representa uma doação
 class Donation
 {
     public int $id;
@@ -16,6 +15,7 @@ class Donation
     public string $status;
     public string $neighborhood;
     public ?string $category_name;
+    public ?string $user_phone_number;
     public DateTime $created_at;
     public DateTime $updated_at;
     public ?DateTime $deleted_at;
@@ -33,13 +33,13 @@ class Donation
         $this->status = $row['status'];
         $this->neighborhood = $row['neighborhood'];
         $this->category_name = $row['category_name'] ?? null;
+        $this->user_phone_number = $row['user_phone_number'] ?? null;
         $this->created_at = new DateTime($row['created_at']);
         $this->updated_at = new DateTime($row['updated_at']);
         $this->deleted_at = isset($row['deleted_at']) ? new DateTime($row['deleted_at']) : null;
     }
 }
 
-// Classe que gerencia as operações no banco
 class DonationModel extends Model
 {
     public function __construct(mysqli $db)
@@ -145,9 +145,10 @@ class DonationModel extends Model
 
     public function retrieve_by_slug(string $slug): ?Donation
     {
-        $query = "SELECT d.*, c.name AS category_name
+        $query = "SELECT d.*, c.name AS category_name, su.phone_number AS user_phone_number
               FROM $this->table_name d
               LEFT JOIN donation_categories c ON d.category_id = c.id
+              LEFT JOIN site_users su ON d.user_id = su.id
               WHERE d.slug=? AND d.deleted_at IS NULL";
 
         $result = $this->select($query, [$slug]);

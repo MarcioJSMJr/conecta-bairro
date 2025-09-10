@@ -1,19 +1,20 @@
-/* --- Cabeçalho e Breadcrumb (Padrão) --- */
+/* Cabeçalho da Página */
 .page-header {
-    position: relative;
-    padding: 6rem 0;
     margin-top: 70px;
+    padding: 6rem 0;
+    position: relative;
     background-size: cover;
     background-position: center;
+    color: var(--white-color);
 }
 
 .page-header .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .page-header .container {
@@ -22,47 +23,36 @@
 }
 
 .page-header h1 {
-    color: var(--white-color);
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-.breadcrumb {
-    display: inline-flex;
-    align-items: center;
+.page-header .breadcrumb {
     background-color: var(--primary-color);
+    display: inline-flex;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.breadcrumb-item a {
-    color: var(--white-color) !important;
-    opacity: 0.9;
-}
-
-.breadcrumb-item a:hover {
-    opacity: 1;
-}
-
-.breadcrumb-item.active {
-    color: var(--white-color) !important;
-    opacity: 1;
-    font-weight: 600;
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
+.page-header .breadcrumb-item a,
+.page-header .breadcrumb-item.active {
     color: var(--white-color);
-    opacity: 0.7;
 }
 
-/* --- Seção de Detalhes do Item --- */
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Conteúdo Principal --- */
 .item-detalhe-section {
-    background-color: var(--white-color);
+    background-color: #f9f9f9;
 }
 
 /* --- Galeria de Imagens --- */
 .gallery-wrapper .main-image {
     border-radius: var(--border-radius);
     overflow: hidden;
+    box-shadow: var(--hover-shadow);
 }
 
 .gallery-wrapper .main-image img {
@@ -72,42 +62,20 @@
     object-fit: cover;
 }
 
-.gallery-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
+/* --- Informações do Item --- */
+.item-info-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-.gallery-thumbnails .thumb {
-    border: 2px solid var(--border-color);
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    opacity: 0.7;
+.item-info-card .item-meta {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
-.gallery-thumbnails .thumb:hover {
-    border-color: var(--primary-color);
-    opacity: 1;
-}
-
-.gallery-thumbnails .thumb.active {
-    border-color: var(--primary-color);
-    opacity: 1;
-    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
-}
-
-.gallery-thumbnails .thumb img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
-
-/* --- Conteúdo do Item --- */
-.item-content-wrapper .post-category {
+.item-info-card .item-meta .post-category {
     background: var(--secondary-color);
     color: var(--white-color);
     padding: 0.3rem 0.8rem;
@@ -116,30 +84,47 @@
     font-weight: 500;
 }
 
-.item-content-wrapper .item-title {
+.item-info-card .item-meta .item-status {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.item-info-card .item-title {
     font-size: 2.2rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.item-lead-box {
-    background-color: var(--light-color);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--primary-color);
+.item-info-card .item-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
 }
 
-.item-lead-box .lead {
-    color: var(--text-color);
-    margin: 0;
-}
-
-/* --- Caixa de Contato Revelada --- */
+/* --- Bloco "Combine a Retirada" --- */
 .contact-info-box {
     background-color: #e9f6ec;
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
     animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-info-box h4 {
@@ -157,37 +142,63 @@
     margin-right: 0.5rem;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- Botão do WhatsApp --- */
+.btn-whatsapp-contact {
+    background-color: #25d366;
+    color: var(--white-color);
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    transition: all var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
-/* --- Ficha de Detalhes --- */
-.detalhes-container .detalhes-title {
+.btn-whatsapp-contact:hover {
+    background-color: #1ebe57;
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp-contact i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* --- Detalhes do Item (Condição, etc) --- */
+.item-details-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+.item-details-card .details-title {
     font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.detalhes-grid {
+.details-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .detalhe-item {
     display: flex;
     align-items: center;
-    background-color: var(--light-color);
+    background-color: #f8f9fa;
     padding: 0.8rem;
     border-radius: 6px;
 }

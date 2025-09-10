@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center" data-aos="fade-up">
                 <h1 class="page-title display-4 text-white">Pontos de Coleta</h1>
-                <p class="page-subtitle lead text-white-50 mb-4">Descarte corretamente e ajude o meio ambiente. Encontre o local mais próximo de você.</p>
+                <p class="page-subtitle lead text-white-50 mb-4">Descarte corretamente e ajude o meio ambiente. <br> Encontre o local mais próximo de você.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo BASE_URL; ?>">Início</a></li>

@@ -2,7 +2,7 @@
 .page-header {
     position: relative;
     padding: 6rem 0;
-    margin-top: 70px;
+    margin-top: 50px;
     background-size: cover;
     background-position: center;
 }
@@ -28,6 +28,7 @@
 
 .page-header .page-subtitle {
     font-size: 1.2rem;
+    color: var(--white-color) !important;
 }
 
 .breadcrumb {

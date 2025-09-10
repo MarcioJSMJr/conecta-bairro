@@ -46,13 +46,24 @@ class SiteUserModel extends Model
 
     public function modify(int $id, ?string $full_name, ?string $email, ?string $password, ?string $phone_number): void
     {
-        $fields = [
-            'full_name' => $full_name,
-            'email' => $email,
-            'password' => $this->encrypt_password($password),
-            'phone_number' => $phone_number
-        ];
-        $this->update($id, $fields);
+        $fields = [];
+
+        if ($full_name !== null) {
+            $fields['full_name'] = $full_name;
+        }
+        if ($email !== null) {
+            $fields['email'] = $email;
+        }
+        if ($phone_number !== null) {
+            $fields['phone_number'] = $phone_number;
+        }
+        if (!empty($password)) {
+            $fields['password'] = $this->encrypt_password($password);
+        }
+
+        if (!empty($fields)) {
+            $this->update($id, $fields);
+        }
     }
 
     public function list_filtered(?string $search = null, ?int $limit = 15, ?int $offset = null): array

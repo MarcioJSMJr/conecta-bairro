@@ -5,8 +5,8 @@ $total_items = $donations_result['total'];
 
 ?>
 
-<section class="page-header">
-    <div class="hero-overlay" style="background-color: rgba(0, 0, 0, 0.4);"></div>
+<section class="page-header" style="background-image: url('<?php echo BASE_URL; ?>assets/images/hero-background.png');">
+    <div class="hero-overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center" data-aos="fade-up">
@@ -62,7 +62,7 @@ $total_items = $donations_result['total'];
                         <div class="doacao-card h-100">
                             <div class="doacao-card-img">
                                 <a href="<?php echo BASE_URL . 'doacao/' . $donation->slug; ?>">
-                                    <img src="<?php echo ADMIN_URL . htmlspecialchars($donation->image_url); ?>" alt="<?php echo htmlspecialchars($donation->title); ?>" class="img-fluid" style="height: 220px; object-fit: cover;">
+                                    <img src="<?php echo ADMIN_URL . htmlspecialchars($donation->image_url); ?>" alt="<?php echo htmlspecialchars($donation->title); ?>" class="img-fluid">
                                 </a>
                             </div>
                             <div class="doacao-card-body">

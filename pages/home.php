@@ -5,7 +5,7 @@
         <p class="lead text-white">Transformando itens parados em oportunidades. <br> Doe, recicle e fortaleça nossa comunidade.</p>
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
             <a href="<?php echo BASE_URL; ?>doacoes" class="btn btn-primary btn-lg">Ver Itens para Doação</a>
-            <a href="<?php echo BASE_URL; ?>como-participar" class="btn btn-secondary btn-lg">
+            <a href="#como-funciona" class="btn btn-secondary btn-lg">
                 <i class="bi bi-patch-question-fill me-2"></i> Como Participar?
             </a>
         </div>

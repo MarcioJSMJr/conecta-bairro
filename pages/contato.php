@@ -1,13 +1,12 @@
 <section class="page-header" style="background-image: url('<?php echo BASE_URL; ?>assets/images/hero-background.png');">
+    <div class="hero-overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 data-aos="fade-up">Fale Conosco</h1>
-                <p class="page-header-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Tem alguma dúvida, sugestão ou quer ser um parceiro do projeto? Entre em contato!
-                </p>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <h1 class="page-title display-4 text-white">Fale Conosco</h1>
+                <p class="page-subtitle lead text-white-50 mb-4">Descarte corretamente e ajude o meio ambiente. <br> Encontre o local mais próximo de você.</p>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo BASE_URL; ?>">Início</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Contato</li>
                     </ol>

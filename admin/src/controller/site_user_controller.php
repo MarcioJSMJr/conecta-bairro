@@ -89,8 +89,8 @@ class SiteUserController extends Controller
     {
         $original_user = $this->model->retrieve($id);
 
-        $full_name = $this->sanitize_post('full_name', 'string', null);
-        $email = $this->sanitize_post('email', 'string', null);
+        $full_name = $this->sanitize_post('full_name', 'string');
+        $email = $this->sanitize_post('email', 'string', $original_user->email);
         $password = $this->sanitize_post('password', 'string', null);
         $phone_number = $this->sanitize_post('phone_number', 'string', null);
 

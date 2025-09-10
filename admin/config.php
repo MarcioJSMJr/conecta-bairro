@@ -6,16 +6,16 @@
 
 // --- 1. SETUP: CAMINHOS E CONSTANTES ---
 
-// Define a raiz do painel administrativo (a pasta /admin)
+// Define a raiz do painel administrativo
 if (!defined('ADMIN_ROOT')) {
     define('ADMIN_ROOT', __DIR__);
 }
-// Define a raiz do projeto (a pasta CONECTABAIRRO)
+// Define a raiz do projeto
 if (!defined('PROJECT_ROOT')) {
     define('PROJECT_ROOT', dirname(ADMIN_ROOT));
 }
 
-// Define a URL base do site principal (ex: http://localhost/conecta-bairro/)
+// Define a URL base do site principal
 if (!defined('BASE_URL')) {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
     $host = $_SERVER['HTTP_HOST'];
@@ -23,7 +23,7 @@ if (!defined('BASE_URL')) {
     define('BASE_URL', $protocol . $host . rtrim($base_path, '/') . '/');
 }
 
-// Define a URL base do painel admin (ex: http://localhost/conecta-bairro/admin/)
+// Define a URL base do painel admin
 if (!defined('ADMIN_URL')) {
     define('ADMIN_URL', BASE_URL . 'admin/');
 }
@@ -45,7 +45,7 @@ require_once ADMIN_ROOT . '/src/helpers/utils.php';
 $app_config = parse_ini_file(PROJECT_ROOT . '/app.ini.php', true);
 
 // Define uma constante de segurança para a criptografia de senhas
-define('PASSWORD_PEPPER', 'a8b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6');
+define('PASSWORD_PEPPER', $app_config['secret']['pepper']);
 
 $db = require_once ADMIN_ROOT . '/src/model/db.php';
 
@@ -65,12 +65,10 @@ require_once ADMIN_ROOT . '/src/controller/admin_activity_log_controller.php';
 require_once ADMIN_ROOT . '/src/controller/collection_point_controller.php';
 require_once ADMIN_ROOT . '/src/controller/site_user_controller.php';
 
-
 // --- 3. SESSÃO: INICIALIZAÇÃO ---
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
 
 // --- 4. OBJETOS: INSTANCIAÇÃO DOS CONTROLLERS ---
 $admin_user_controller = new AdminUserController($db);
@@ -84,13 +82,10 @@ $site_user_controller = new SiteUserController($db);
 // --- 5. ROTEAMENTO: ANÁLISE DA URL ADMIN ---
 $url = $_GET['url'] ?? '';
 $url_parts = explode('/', rtrim($url, '/'));
-
-$resource = $url_parts[0] ?: 'dashboard'; // ex: 'donations'
-// Ações como 'edit', 'create' e IDs virão dos formulários (POST)
+$resource = $url_parts[0] ?: 'dashboard';
 
 // --- 6. AÇÕES: PROCESSAMENTO DE FORMULÁRIOS (POST) ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Pega o tipo de ação de um campo escondido no formulário do modal
     $action_type = $_POST['action_type'] ?? null;
 
     // Processa o formulário de LOGIN

@@ -2,10 +2,9 @@
 .page-header {
     position: relative;
     padding: 6rem 0;
-    margin-top: 70px;
+    margin-top: 50px;
     background-size: cover;
     background-position: center;
-    background-image: url('../../assets/images/hero-background.png');
 }
 
 .page-header .hero-overlay {
@@ -31,6 +30,7 @@
 .page-header .page-subtitle {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    color: var(--white-color) !important;
 }
 
 /* --- Breadcrumb --- */
