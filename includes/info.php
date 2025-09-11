@@ -6,10 +6,10 @@
 define('SITE_NAME', 'Conecta-Bairro');
 
 // Informações de Contato (Genéricas para o projeto)
-define('CONTACT_PHONE', '(15) 9XXXX-XXXX');
+define('CONTACT_PHONE', '(15) 99999-9999');
 define('CONTACT_WHATSAPP_NUMBER', '55159XXXXXXXX');
 define('CONTACT_EMAIL', 'contato@conectabairro.com.br');
-define('CONTACT_ADDRESS', 'Projeto Comunitário - Itapetininga, SP');
+define('CONTACT_ADDRESS', 'Conecta-Bairro - Itapetininga, SP');
 
 // Horário de Atendimento
 define('BUSINESS_HOURS', 'Segunda a Sexta: 09:00 - 17:00');

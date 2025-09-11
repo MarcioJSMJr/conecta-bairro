@@ -17,6 +17,7 @@
                         <li><i class="fas fa-chevron-right"></i> <a href="<?php echo BASE_URL; ?>doacoes">Itens para Doação</a></li>
                         <li><i class="fas fa-chevron-right"></i> <a href="<?php echo BASE_URL; ?>sobre">Sobre o Projeto</a></li>
                         <li><i class="fas fa-chevron-right"></i> <a href="<?php echo BASE_URL; ?>contato">Contato</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="<?php echo BASE_URL; ?>politica-de-privacidade">Politica de Privacidade</a></li>
                     </ul>
                 </div>
 
@@ -44,9 +45,9 @@
                 <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="400">
                     <h4>Entre em Contato</h4>
                     <p>
-                        <strong><i class="bi bi-geo-alt-fill"></i></strong> <?php echo CONTACT_ADDRESS; ?><br>
-                        <strong><i class="bi bi-telephone-fill"></i></strong> <?php echo CONTACT_PHONE; ?><br>
-                        <strong><i class="bi bi-envelope-fill"></i></strong> <?php echo CONTACT_EMAIL; ?><br>
+                        <strong><i class="bi bi-geo-alt-fill me-2"></i></strong> <?php echo CONTACT_ADDRESS; ?><br>
+                        <strong><i class="bi bi-telephone-fill me-2"></i></strong> <?php echo CONTACT_PHONE; ?><br>
+                        <strong><i class="bi bi-envelope-fill me-2"></i></strong> <?php echo CONTACT_EMAIL; ?><br>
                     </p>
                     <div class="social-links mt-4">
                         <a href="<?php echo SOCIAL_FACEBOOK; ?>" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
