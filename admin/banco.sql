@@ -57,15 +57,6 @@ CREATE TABLE `admin_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `admin_users`
---
-
-INSERT INTO `admin_users` (`id`, `name`, `username`, `password`, `auth_level`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Administrador', 'admin', '$argon2i$v=19$m=65536,t=4,p=1$a0J1Y2NjSVBTSkljVWJDYg$neGo8NbNtbA5aAzyyS73Tevu5bX7OzeG5by0Z3KGZdc', 'super', '2025-08-22 15:55:25', '2025-08-22 15:55:25', NULL);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `collection_points`
 --
 
@@ -84,16 +75,6 @@ CREATE TABLE `collection_points` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `collection_points`
---
-
-INSERT INTO `collection_points` (`id`, `name`, `street`, `number`, `neighborhood`, `city`, `state`, `accepted_materials`, `category`, `Maps_link`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Cooperita - Coop. de Reciclagem de Itapetininga', 'Rua Orlando Scotto', '68', 'Vila Prado', 'Itapetininga', 'SP', 'Papel, Alumínio, Plástico, Vidro', 'Geral', 'http://googleusercontent.com/maps.google.com/8Cooperita+-+Coop.+de+Reciclagem+de+Itapetininga%2C+Rua+Orlando+Scotto%2C+68%2C+Vila+Prado%2C+Itapetininga%2C+SP', '2025-08-25 18:28:05', '2025-08-28 16:00:00', NULL);
-
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `donations`
@@ -116,16 +97,6 @@ CREATE TABLE `donations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `donations`
---
-
-INSERT INTO `donations` (`id`, `user_id`, `category_id`, `title`, `description`, `slug`, `image_url`, `condition`, `status`, `neighborhood`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 1, 'Sofá Retrátil 3 Lugares', 'Sofá em bom estado de conservação, tecido suede cinza. A parte retrátil está funcionando perfeitamente. Ideal para sala de estar. Motivo da doação: mudança.', 'sofa-retratil-3-lugares', 'media/donations/sofa-doacao.png', 'Usado', 'Disponível', 'Vila Aparecida', '2025-08-22 13:00:00', '2025-08-25 15:51:59', NULL),
-(2, 1, 3, 'Monitor de Computador LG 19 Polegadas', 'Monitor LCD funcionando perfeitamente, sem nenhum pixel queimado. Acompanha cabo de força e cabo VGA. Ótimo para estudos ou como segunda tela.', 'monitor-de-computador-lg-19-polegadas', 'media/donations/monitor-doacao.png', 'Usado', 'Reservado', 'Centro', '2025-08-25 12:30:00', '2025-08-25 15:16:10', NULL);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `donation_categories`
 --
 
@@ -137,16 +108,6 @@ CREATE TABLE `donation_categories` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `donation_categories`
---
-
-INSERT INTO `donation_categories` (`id`, `name`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Móveis', 'moveis', '2025-08-25 14:36:11', '2025-08-25 14:36:11', NULL),
-(3, 'Eletrônicos', 'eletronicos', '2025-08-25 15:52:37', '2025-08-25 15:52:37', NULL);
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `site_users`
@@ -162,13 +123,6 @@ CREATE TABLE `site_users` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `site_users`
---
-
-INSERT INTO `site_users` (`id`, `full_name`, `email`, `password`, `phone_number`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Márcio Jose', 'marcio@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$VE5BWFhnZE1xd0xuOEN5Rw$CmoLjCaX9I/1Gx+5nLsc596ZHEas/PeYjtSLu0tar0s', '15991234567', '2025-08-25 14:36:11', '2025-08-27 18:13:27', NULL);
 
 --
 -- Índices para tabelas despejadas

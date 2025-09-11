@@ -9,7 +9,7 @@ $isManagementPage = in_array($resource, $managementPages);
 
 <div class="sidebar-wrapper" id="sidebar-wrapper">
     <div class="sidebar-header">
-        <a href="<?php echo ADMIN_URL; ?>dashboard" class="sidebar-brand">
+        <a href="<?php echo ADMIN_URL; ?>" class="sidebar-brand">
             <img src="<?php echo BASE_URL; ?>assets/images/logo.png" alt="Logo" class="logo">
         </a>
         <button class="btn sidebar-close-btn d-lg-none sidebar-toggle-btn">

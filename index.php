@@ -49,6 +49,9 @@ switch ($page) {
         $view_data['featured_collection_points'] = $collection_point_controller->list(3);
         break;
 
+    case 'politica-de-privacidade':
+        break;
+
     case 'doacoes':
         $items_per_page = 9;
         $donations_result = $donation_controller->get_paginated_list_with_filters($items_per_page);

@@ -9,7 +9,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
 // --- PÁGINAS ESTÁTICAS ---
-$static_pages = ['home', 'sobre', 'doacoes', 'contato', 'pontos-coleta'];
+$static_pages = ['home', 'sobre', 'doacoes', 'contato', 'pontos-coleta', 'politica-de-privacidade'];
 foreach ($static_pages as $page) {
     if (isset($seo_data[$page])) {
         $sufix = ($page === 'home') ? '' : $seo_data[$page]['url_sufix'];
@@ -18,7 +18,7 @@ foreach ($static_pages as $page) {
     }
 }
 
-// --- PÁGINAS DINÂMICAS DE DOAÇÕES (DO BANCO DE DADOS) ---
+// --- PÁGINAS DINÂMICAS DE DOAÇÕES ---
 $all_donations = $donation_controller->list_all();
 if (!empty($all_donations)) {
     foreach ($all_donations as $donation) {

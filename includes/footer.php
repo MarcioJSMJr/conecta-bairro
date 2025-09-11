@@ -63,7 +63,7 @@
             Copyright &copy; <strong><?php echo SITE_NAME; ?></strong> <?php echo date("Y"); ?>. Todos os Direitos Reservados.
         </div>
         <div class="credits">
-            Desenvolvido por: <a href="#">Marcio José</a>
+            Desenvolvido por: <a href="https://github.com/MarcioJSMJr">Marcio José</a>
         </div>
     </div>
 

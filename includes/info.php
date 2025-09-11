@@ -57,10 +57,16 @@ $seo_data = [
         'og_image' => 'og-image-contato.png',
         'url_sufix' => 'contato'
     ],
-     'pontos-coleta' => [
+    'pontos-coleta' => [
         'title' => 'Pontos de Coleta | ' . SITE_NAME,
         'description' => 'Encontre os ecopontos e locais de coleta seletiva em Itapetininga para descartar corretamente seus recicláveis.',
         'og_image' => 'og-image-coleta.jpg',
         'url_sufix' => 'pontos-coleta'
+    ],
+    'politica-de-privacidade' => [
+        'title' => 'Política de Privacidade | ' . SITE_NAME,
+        'description' => 'Conheça nossas práticas de privacidade e como lidamos com os dados dos usuários na plataforma Conecta-Bairro.',
+        'og_image' => 'og-image-default.png',
+        'url_sufix' => 'politica-de-privacidade'
     ],
 ];

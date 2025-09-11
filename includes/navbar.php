@@ -14,13 +14,13 @@
                     <a class="nav-link <?php echo ($page == 'home') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($page == 'doacoes' || $page == 'doacao-detalhe') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>doacoes">Itens para Doação</a>
+                    <a class="nav-link <?php echo ($page == 'doacoes' || $page == 'doacao-detalhe') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>doacoes">Doações</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($page == 'pontos-coleta') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>pontos-coleta">Pontos de Coleta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($page == 'sobre') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>sobre">Sobre o Projeto</a>
+                    <a class="nav-link <?php echo ($page == 'sobre') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>sobre">Sobre</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($page == 'contato') ? 'active' : ''; ?>" href="<?php echo BASE_URL; ?>contato">Contato</a>
