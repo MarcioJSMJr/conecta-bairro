@@ -14,7 +14,6 @@
             <div class="col-md-3">
                 <select name="role" class="form-select">
                     <option value="">Todos os Cargos</option>
-                    <option value="super" <?php echo (($_GET['role'] ?? '') == 'super') ? 'selected' : ''; ?>>Super Admin</option>
                     <option value="admin" <?php echo (($_GET['role'] ?? '') == 'admin') ? 'selected' : ''; ?>>Administrador</option>
                     <option value="editor" <?php echo (($_GET['role'] ?? '') == 'editor') ? 'selected' : ''; ?>>Editor</option>
                 </select>
